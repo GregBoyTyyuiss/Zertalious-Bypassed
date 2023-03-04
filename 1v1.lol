@@ -16,7 +16,6 @@
 // @run-at       document-start
 // @antifeature  ads
 // @license MIT
-// test
 // ==/UserScript==
 
 const searchSize = 300;

@@ -5,6 +5,12 @@
 // @description  Let's you see players behind walls. Comes with a wireframe view mode too. Press V and N to toggle them.
 // @author       Tyyuiss#3470 | Made by Zertalious
 // @match        *://1v1.lol/*
+// @match        *://play1v1.com/*
+// @match        *://boxfight.io/*
+// @match        *://zonewars.io/*
+// @match        *://aim.lol/*
+// @match        *://justaim.lol/*
+// @match        *://justedit.lol*
 // @icon         https://www.google.com/s2/favicons?domain=1v1.lol
 // @grant        none
 // @run-at       document-start

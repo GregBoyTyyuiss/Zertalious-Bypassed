@@ -345,7 +345,7 @@ el.innerHTML = `<style>
     }
 
     .range-active {
-        border: 2px solid #fff;
+        border: 2px solid blue;
     }
 
 </style>

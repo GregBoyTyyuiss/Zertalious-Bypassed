@@ -345,7 +345,7 @@ el.innerHTML = `<style>
     }
 
     .range-active {
-        border: 2px solid red;
+        border: 2px solid #fff;
     }
 
 </style>
@@ -370,6 +370,8 @@ el.innerHTML = `<style>
     <br>
     <br>
     Ads bypassed by Tyyuiss#3470 😎
+    <br>
+    UI by Tyyuiss#3470 😎
 	<br>
 	<br>
 	<div style="display: grid; grid-template-columns: 1fr 1fr; grid-gap: 5px;">

@@ -49,19 +49,19 @@ WebGL.shaderSource = new Proxy( WebGL.shaderSource, {
 
 			args[ 1 ] = args[ 1 ].replace( 'void main', `
 
-				out float vDepth; 
-				uniform bool enabled; 
-				uniform float threshold; 
+				out float vDepth;
+				uniform bool enabled;
+				uniform float threshold;
 
 				void main
 
 			` ).replace( /return;/, `
 
-				vDepth = gl_Position.z; 
+				vDepth = gl_Position.z;
 
-				if ( enabled && vDepth > threshold ) { 
+				if ( enabled && vDepth > threshold ) {
 
-					gl_Position.z = 1.0; 
+					gl_Position.z = 1.0;
 
 				}
 
@@ -71,17 +71,17 @@ WebGL.shaderSource = new Proxy( WebGL.shaderSource, {
 
 			args[ 1 ] = args[ 1 ].replace( 'void main', `
 
-				in float vDepth; 
-				uniform bool enabled; 
-				uniform float threshold; 
+				in float vDepth;
+				uniform bool enabled;
+				uniform float threshold;
 
 				void main
 
 			` ).replace( /return;/, `
 
-				if ( enabled && vDepth > threshold ) { 
+				if ( enabled && vDepth > threshold ) {
 
-					SV_Target0 = vec4( 1.0, 0.0, 0.0, 1.0 ); 
+					SV_Target0 = vec4( 1.0, 0.0, 0.0, 1.0 );
 
 				}
 
@@ -136,7 +136,7 @@ WebGL.drawElements = new Proxy( WebGL.drawElements, {
 		if ( ! program.uniforms ) {
 
 			program.uniforms = {
-				enabled: thisArgs.getUniformLocation( program, 'enabled' ), 
+				enabled: thisArgs.getUniformLocation( program, 'enabled' ),
 				threshold: thisArgs.getUniformLocation( program, 'threshold' )
 			};
 
@@ -225,8 +225,8 @@ window.requestAnimationFrame = new Proxy( window.requestAnimationFrame, {
 			}
 		} );
 
-		return Reflect.apply( ...arguments ); 
- 
+		return Reflect.apply( ...arguments );
+
 	}
 } )
 
@@ -238,101 +238,115 @@ const el = document.createElement( 'div' );
 el.innerHTML = `<style>
 
 .dialog {
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	padding: 20px;
-	background: #1e294a;
-	color: #fff;
-	transform: translate(-50%, -50%);
-	text-align: center;
-	z-index: 999999;
-	font-family: cursive;
-}
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        padding: 20px;
+        background: #2c2f33;
+        color: #fff;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 999999;
+        font-family: 'Whitney', sans-serif;
+        border-radius: 10px;
+    }
 
-.dialog * {
-	color: #fff;
-}
+    .dialog * {
+        color: #fff;
+    }
 
-.close {
-	position: absolute;
-	right: 5px;
-	top: 5px;
-	width: 20px;
-	height: 20px;
-	opacity: 0.5;
-	cursor: pointer;
-}
+    .close {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        width: 20px;
+        height: 20px;
+        opacity: 0.5;
+        cursor: pointer;
+    }
 
-.close:before, .close:after {
-	content: ' ';
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	width: 100%;
-	height: 20%;
-	transform: translate(-50%, -50%) rotate(-45deg);
-	background: #fff;
-}
+    .close:before,
+    .close:after {
+        content: ' ';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 100%;
+        height: 20%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        background: #fff;
+        border-radius: 3px;
+    }
 
-.close:after {
-	transform: translate(-50%, -50%) rotate(45deg);
-}
+    .close:after {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
 
-.close:hover {
-	opacity: 1;
-}
+    .close:hover {
+        opacity: 1;
+    }
 
-.btn {
-	cursor: pointer;
-	padding: 0.5em;
-	background: red;
-	border: 3px solid rgba(0, 0, 0, 0.2);
-}
+    .btn {
+        cursor: pointer;
+        padding: 0.5em;
+        background: #7289da;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-weight: bold;
+        transition: all 0.2s ease-in-out;
+        margin-bottom: 5px;
+    }
 
-.btn:active {
-	transform: scale(0.8);
-}
+    .btn:hover {
+        background: #677bc4;
+    }
 
-.msg {
-	position: absolute;
-	left: 10px;
-	bottom: 10px;
-	background: #1e294a;
-	color: #fff;
-	font-family: cursive;
-	font-weight: bolder;
-	padding: 15px;
-	animation: msg 0.5s forwards, msg 0.5s reverse forwards 3s;
-	z-index: 999999;
-	pointer-events: none;
-}
- 
-@keyframes msg {
-	from {
-		transform: translate(-120%, 0);
-	}
- 
-	to {
-		transform: none;
-	}
-}
+    .btn:active {
+        transform: scale(0.9);
+    }
 
-.range {
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	width: ${searchSize}px;
-	height: ${searchSize}px;
-	max-width: 100%;
-	max-height: 100%;
-	border: 1px solid white;
-	transform: translate(-50%, -50%);
-}
+    .msg {
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+        background: #2c2f33;
+        color: #fff;
+        font-family: 'Whitney', sans-serif;
+        font-weight: bold;
+        padding: 15px;
+        animation: msg 0.5s forwards, msg 0.5s reverse forwards 3s;
+        z-index: 999999;
+        pointer-events: none;
+        border-radius: 10px;
+    }
 
-.range-active {
-	border: 2px solid red;
-}
+    @keyframes msg {
+        from {
+            transform: translate(-120%, 0);
+        }
+
+        to {
+            transform: none;
+        }
+    }
+
+    .range {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: ${searchSize}px;
+        height: ${searchSize}px;
+        max-width: 100%;
+        max-height: 100%;
+        border: 1px solid white;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+    }
+
+    .range-active {
+        border: 2px solid red;
+    }
 
 </style>
 <div class="dialog">${shouldShowAd ? `<big>Loading ad...</big>` : `<div class="close" onclick="this.parentNode.style.display='none';"></div>
@@ -377,22 +391,22 @@ const dialogEl = el.querySelector( '.dialog' );
 const rangeEl = el.querySelector( '.range' );
 
 window.addEventListener( 'DOMContentLoaded', function () {
-	
+
 	while ( el.children.length > 0 ) {
-	
+
 		document.body.appendChild( el.children[ 0 ] );
-	
+
 	}
-	 
+
 	if ( shouldShowAd ) {
 
 		const url = new URL( window.location.href );
-	
+
 		url.searchParams.set( 'showAd', Date.now().toString( 16 ) );
 		url.searchParams.set( 'scriptVersion', GM.info.script.version );
-	
+
 		window.location.href = 'https://zertalious.xyz?ref=' + new TextEncoder().encode( url.href ).toString();
-	
+
 	}
 
 } );
@@ -401,18 +415,18 @@ window.addEventListener( 'keyup', function ( event ) {
 
 	switch ( String.fromCharCode( event.keyCode ) ) {
 
-		case 'M' : 
-			
-			espEnabled = ! espEnabled; 
-			
+		case 'M' :
+
+			espEnabled = ! espEnabled;
+
 			showMsg( 'ESP', espEnabled );
-			
+
 			break;
-		
-		case 'N' : 
-			
-			wireframeEnabled = ! wireframeEnabled; 
-			
+
+		case 'N' :
+
+			wireframeEnabled = ! wireframeEnabled;
+
 			showMsg( 'Wireframe', wireframeEnabled );
 
 			break;
@@ -428,7 +442,7 @@ window.addEventListener( 'keyup', function ( event ) {
 		case 'H' :
 
 			dialogEl.style.display = dialogEl.style.display === '' ? 'none' : '';
-			
+
 			break;
 	}
 

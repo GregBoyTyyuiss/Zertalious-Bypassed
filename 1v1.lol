@@ -366,19 +366,19 @@ el.innerHTML = `<style>
     <br>
     <hr>
 	<br>
-	By Zertalious
+	By Zertalious 📜
     <br>
     <br>
     Ads bypassed by Tyyuiss#3470 😎
     <br>
-    UI by Tyyuiss#3470 😎
+    UI by Tyyuiss#3470 🖥️
 	<br>
 	<br>
 	<div style="display: grid; grid-template-columns: 1fr 1fr; grid-gap: 5px;">
 		<div class="btn" onclick="window.open('https://discord.gg/K24Zxy88VM', '_blank')">Discord</div>
 		<div class="btn" onclick="window.open('https://www.instagram.com/zertalious/', '_blank')">Instagram</div>
 		<div class="btn" onclick="window.open('https://twitter.com/Zertalious', '_blank')">Twitter</div>
-		<div class="btn" onclick="window.open('https://greasyfork.org/en/users/662330-zertalious', '_blank')">More scripts</div>
+		<div class="btn" onclick="window.open('https://greasyfork.org/en/users/662330-zertalious', '_blank')">More Scripts</div>
         <div class="btn" onclick="window.open('https://discord.gg/HX7KCXVBkE', '_blank')">Ads Bypassed Discord</div>
         <div class="btn" onclick="window.open('https://raw.githubusercontent.com/GregBoyTyyuiss/Zertalious-Bypassed/main/1v1.lol', '_blank')">Update Script</div>
 	</div>

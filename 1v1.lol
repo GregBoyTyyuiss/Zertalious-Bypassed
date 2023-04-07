@@ -14,7 +14,6 @@
 // @icon         https://www.google.com/s2/favicons?domain=1v1.lol
 // @grant        none
 // @run-at       document-start
-// @antifeature  ads
 // @license MIT
 // ==/UserScript==
 
@@ -366,7 +365,7 @@ el.innerHTML = `<style>
     <br>
     <hr>
 	<br>
-	By Zertalious 📜
+	Original script Zertalious 📜
     <br>
     <br>
     Ads bypassed by Tyyuiss#3470 😎
@@ -380,7 +379,7 @@ el.innerHTML = `<style>
 		<div class="btn" onclick="window.open('https://twitter.com/Zertalious', '_blank')">Twitter</div>
 		<div class="btn" onclick="window.open('https://greasyfork.org/en/users/662330-zertalious', '_blank')">More Scripts</div>
         <div class="btn" onclick="window.open('https://discord.gg/HX7KCXVBkE', '_blank')">Ads Bypassed Discord</div>
-        <div class="btn" onclick="window.open('https://raw.githubusercontent.com/GregBoyTyyuiss/Zertalious-Bypassed/main/1v1.lol', '_blank')">Update Script</div>
+        <div class="btn" onclick="window.open('https://greasyfork.org/en/scripts/463398-1v1-lol-aimbot-esp-wireframe-view-ads-bypassed', '_blank')">Update Script</div>
 	</div>
 	` }
 </div>
